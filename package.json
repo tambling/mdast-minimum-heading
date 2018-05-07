@@ -1,0 +1,16 @@
+{
+  "name": "mdast-minimum-heading",
+  "version": "0.0.1",
+  "description": "Transform mdast to nest all headings below a certain level",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": "tambling/mdast-minimum-heading",
+  "keywords": [
+    "mdast",
+    "headings"
+  ],
+  "author": "Dean Tambling <dean.tambling@gmail.com> (http://tambling.me)",
+  "license": "MIT"
+}
