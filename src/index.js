@@ -1,4 +1,4 @@
-import visit from "unist-util-visit";
+const visit = require("unist-util-visit");
 
 const ABSOLUTE_MINIMUM = 1;
 const ABSOLUTE_MAXIMUM = 6;
@@ -43,4 +43,4 @@ const applyMinimumHeader = (ast, level) => {
   return ast;
 };
 
-export default applyMinimumHeader;
+module.exports = applyMinimumHeader;

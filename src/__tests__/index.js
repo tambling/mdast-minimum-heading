@@ -1,8 +1,8 @@
-import fs from "fs";
-import path from "path";
-import remark from "remark";
+const fs = require("fs");
+const path = require("path");
+const remark = require("remark");
 
-import applyMinimumHeading from "..";
+const applyMinimumHeading = require("..");
 
 const loadToRemark = (collection, name) =>
   remark()
