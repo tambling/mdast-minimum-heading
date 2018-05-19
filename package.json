@@ -8,7 +8,7 @@
     "lint": "$(npm bin)/eslint --fix",
     "precommit": "$(npm bin)/lint-staged && npm test",
     "compile": "BABEL_ENV=production $(npm bin)/babel src/ --out-dir build/",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile"
   },
   "lint-staged": {
     "*.js": [
