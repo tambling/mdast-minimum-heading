@@ -43,3 +43,13 @@ test("applyMinimumHeading can also figure out a minimum from a tag name", () => 
 
   expect(actual).toEqual(expected);
 });
+
+test("applyMinimumHeading doesn't change anything if passed nonsense", () => {
+  const expected = loadToRemark("outputs", "unchanged");
+  const actual = applyMinimumHeading(
+    loadToRemark("inputs", "unchanged"),
+    "heck"
+  );
+
+  expect(actual).toEqual(expected);
+});
