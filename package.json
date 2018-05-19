@@ -2,9 +2,19 @@
   "name": "mdast-minimum-heading",
   "version": "0.0.1",
   "description": "Transform mdast to nest all headings below a certain level",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "$(npm bin)/jest",
+    "lint": "$(npm bin)/eslint --fix",
+    "precommit": "$(npm bin)/lint-staged && npm test",
+    "compile": "BABEL_ENV=production $(npm bin)/babel src/ --out-dir build/",
+    "prepublish": "npm run compile"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "repository": "tambling/mdast-minimum-heading",
   "keywords": [
@@ -12,5 +22,25 @@
     "headings"
   ],
   "author": "Dean Tambling <dean.tambling@gmail.com> (http://tambling.me)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "babel-core": "^7.0.0-bridge.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.4",
+    "lint-staged": "^7.1.1",
+    "prettier": "^1.12.1",
+    "remark": "^9.0.0"
+  },
+  "dependencies": {
+    "unist-util-visit": "^1.3.1"
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "presets": ["@babel/preset-env"],
+  "env": {
+    "production": {
+      "ignore": [
+        "**/*.test.js",
+        "**/__tests__/*.js"
+      ]
+    }
+  }
+}
