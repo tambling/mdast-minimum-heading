@@ -1,6 +1,6 @@
 {
   "name": "mdast-minimum-heading",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Transform mdast to nest all headings below a certain level",
   "main": "build/index.js",
   "scripts": {
